@@ -128,13 +128,13 @@ public enum SortStrategy {
         public int[] sort(int... elements) {
             // i，要插入到有序集合的数的下标
             for (int i = 1, j; i < elements.length; i++) {
-                int insert = elements[i];// 要插入的数
+                int insertion = elements[i];// 要插入的数
                 // 假如insert比前面的值小，则将前面的值后移
                 // j，后移时被覆盖的数的下标
-                for (j = i; j > 0 && insert < elements[j - 1]; j--) {
+                for (j = i; j > 0 && insertion < elements[j - 1]; j--) {
                     elements[j] = elements[j - 1];
                 }
-                elements[j] = insert;
+                elements[j] = insertion;
             }
             return elements;
         }
